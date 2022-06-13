@@ -85,7 +85,8 @@ public class Ingame extends JavaPlugin {
 
     commands
         .getCommandContexts()
-        .registerContext(Match.class, c -> PGM.get().getMatchManager().getMatch(c.getSender()));
+        .registerIssuerOnlyContext(
+            Match.class, c -> PGM.get().getMatchManager().getMatch(c.getSender()));
 
     commands
         .getCommandContexts()
